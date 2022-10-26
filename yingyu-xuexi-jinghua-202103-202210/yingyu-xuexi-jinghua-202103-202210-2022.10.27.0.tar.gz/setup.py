@@ -1,0 +1,55 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import setuptools
+import YingyuXuexiJinghua202103202210
+import os
+from os import path
+
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
+for subdir, _, _ in os.walk('YingyuXuexiJinghua202103202210'):
+    fname = path.join(subdir, '__init__.py')
+    open(fname, 'a').close()
+    
+setuptools.setup(
+    name="yingyu-xuexi-jinghua-202103-202210",
+    version=YingyuXuexiJinghua202103202210.__version__,
+    url="https://github.com/apachecn/yingyu-xuexi-jinghua-202103-202210",
+    author=YingyuXuexiJinghua202103202210.__author__,
+    author_email=YingyuXuexiJinghua202103202210.__email__,
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Environment :: Console",
+        "Intended Audience :: Developers",
+        "Intended Audience :: End Users/Desktop",
+        "License :: Other/Proprietary License",
+        "Natural Language :: Chinese (Simplified)",
+        "Natural Language :: English",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Topic :: Text Processing :: Markup :: Markdown",
+        "Topic :: Text Processing :: Markup :: HTML",
+        "Topic :: Internet :: WWW/HTTP",
+        "Topic :: Software Development :: Documentation",
+        "Topic :: Documentation",
+    ],
+    description="英语学习精华 2021.3~2022.10",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    keywords=[],
+    install_requires=[],
+    python_requires=">=3.6",
+    entry_points={
+        'console_scripts': [
+            "yingyu-xuexi-jinghua-202103-202210=YingyuXuexiJinghua202103202210.__main__:main",
+            "YingyuXuexiJinghua202103202210=YingyuXuexiJinghua202103202210.__main__:main",
+        ],
+    },
+    packages=setuptools.find_packages(),
+    package_data={'': ['*']},
+)
